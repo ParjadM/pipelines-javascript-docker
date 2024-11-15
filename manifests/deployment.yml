@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: parjadmpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: parjadmpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: parjadmpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: parjadmpipelinesjavascriptdocker 
+          image: parjadcontainerregistry.azurecr.io/parjadmpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
